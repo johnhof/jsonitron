@@ -1,0 +1,25 @@
+{
+  "name": "jsonitron",
+  "version": "1.0.0",
+  "description": "Json transformer for use in data hygene and proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnhof/jsonitron.git"
+  },
+  "keywords": [
+    "json",
+    "transform",
+    "object",
+    "transformer"
+  ],
+  "author": "John Hofrichter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnhof/jsonitron/issues"
+  },
+  "homepage": "https://github.com/johnhof/jsonitron#readme"
+}
