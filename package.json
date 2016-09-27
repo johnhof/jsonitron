@@ -21,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/johnhof/jsonitron/issues"
   },
-  "homepage": "https://github.com/johnhof/jsonitron#readme"
+  "homepage": "https://github.com/johnhof/jsonitron#readme",
+  "dependencies": {
+    "change-case": "^3.0.0",
+    "comise": "^1.0.1",
+    "lodash": "^4.16.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "co-mocha": "^1.1.3",
+    "mocha": "^3.0.2"
+  }
 }

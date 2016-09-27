@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
-  Tranform: require('./transformer'),
+  Transform: require('./transform'),
+  Transformer: require('./transformer'),
   Factory: require('./factory')
 }
