@@ -4,31 +4,51 @@ const mocha = require('co-mocha');
 const expect = require('chai').expect;
 const _ = require('lodash');
 
-const HELPERS = require('../helpers');
+const HELPERS = require('../lib/helpers');
 
 describe('Helpers', () => {
   describe('findMatchingPaths', () => {
-    it('build all paths that match the generic path', () => {
+    it('build all simple paths that match the generic path', () => {
+      let path = 'foo.fazz.baz';
+      let obj = {
+        foo: {
+          fazz: { baz: 'nope' }
+        },
+      };
+
+      let expected = [
+        'foo.fazz.baz',
+      ];
+
+      let result = HELPERS.findMatchingPaths(path, obj);
+      let map = {};
+      _.each(result, (match) => map[match] = 1);
+      _.each(expected, (str) => {
+        expect(map[str]).to.equal(1);
+      });
+    });
+
+    it('build all complex paths that match the generic path', () => {
       let path = 'foo.fuzz.*.bar.*.biz';
       let obj = {
         foo: {
           fuzz: [{
             bar: {
-              one: { biz: 'test1' },
-              two: { biz: 'test2' },
-              three: { biz: 'test2' },
+              one: { biz: 'test1', baz: 'nope' },
+              two: { biz: 'test2', baz: 'nope' },
+              three: { biz: 'test2', baz: 'nope' },
             },
           }, {
             bar: {
-              one: { biz: 'test1'},
-              two: { biz: 'test2' },
-              three: { biz: 'test2' },
+              one: { biz: 'test1', baz: 'nope' },
+              two: { biz: 'test2', baz: 'nope' },
+              three: { biz: 'test2', baz: 'nope' },
             },
           }, {
             bar: {
-              one: { biz: 'test1' },
-              two: { biz: 'test2' },
-              three: { biz: 'test2' },
+              one: { biz: 'test1', baz: 'nope' },
+              two: { biz: 'test2', baz: 'nope' },
+              three: { biz: 'test2', baz: 'nope' },
             },
           }],
           fazz: { baz: 'nope' }
@@ -52,7 +72,9 @@ describe('Helpers', () => {
       _.each(result, (match) => map[match] = 1);
       _.each(expected, (str) => {
         expect(map[str]).to.equal(1);
+        delete map[str];
       });
+      expect(Object.keys(map).length).to.equal(0);
     });
   });
 });
