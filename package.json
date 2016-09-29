@@ -1,6 +1,6 @@
 {
   "name": "jsonitron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Json transformer for use in data hygene and proxy",
   "main": "index.js",
   "scripts": {
