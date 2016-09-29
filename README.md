@@ -1,5 +1,7 @@
 # JSONitron
 
+[![Build Status](https://travis-ci.org/johnhof/jsonitron.svg?branch=master)](https://travis-ci.org/johnhof/jsonitron)
+
 JSON transformer for use in data hygene and proxy
 
 ## Usage
